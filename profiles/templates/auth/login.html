@@ -1,0 +1,32 @@
+{% extends "base.html" %}
+
+{% block body %}
+<div class="card-header d-flex align-items-center">
+    <p class="display-6 mb-0">Login Form</p>
+</div>
+<div class="card-body">
+    <h5 class="card-title mb-3">User Information</h5>
+    <form method="POST" action="login" class="d-flex flex-column gap-3 mb-3">
+        <div class="input-group">
+            <span class="input-group-text">Username</span>
+            <input type="text" name="username" id="username" aria-label="Username" placeholder="Username" class="form-control" required>
+        </div>
+        <div class="input-group">
+            <span class="input-group-text">Password</span>
+            <input type="password" name="password" id="password" aria-label="Password" placeholder="Password" class="form-control" required>
+        </div>
+        {% for message in get_flashed_messages() %}
+            <div class="alert alert-danger mb-0" role="alert">{{ message }}</div>
+        {% endfor %}
+        <input type="submit" class="btn btn-lg btn-primary" value="Sign In">
+    </form>
+    <hr>
+    <div class="d-flex w-100">
+        <a 
+            href="{{ url_for('auth.register') }}" 
+            class="mx-auto link-primary link-offset-2 link-underline-opacity-25 link-underline-opacity-100-hover">
+            Register
+        </a>
+    </div>
+</div>
+{% endblock %}

@@ -1,0 +1,17 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link href="{{ url_for('static', filename='/css/bootstrap.min.css') }}" rel="stylesheet">
+</head>
+<body class="bg-primary">
+    <div class="d-flex align-items-center justify-content-center vh-100">
+        <div class="card">
+            {% block body %}{% endblock %}
+        </div>
+    </div>
+    <script src="{{ url_for('static', filename='/js/bootstrap.bundle.min.js') }}"></script>
+</body>
+</html>

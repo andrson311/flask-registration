@@ -1,0 +1,22 @@
+{% extends "base.html" %}
+
+{% block body %}
+<div class="card-header d-flex justify-content-between align-items-center">
+    <p class="display-6 mb-0">Profile</p>
+    <a href="{{ url_for('auth.logout') }}" class="btn btn-primary">Log out</a>
+</div>
+<div class="card-body">
+    <h5 class="card-title mb-3">User Information</h5>
+    <div class="d-flex flex-column gap-3 mb-0">
+        <div class="input-group">
+            <span class="input-group-text">Username</span>
+            <input disabled type="text" aria-label="Username" placeholder="{{ user['username'] }}" class="form-control">
+        </div>
+        <div class="input-group">
+            <span class="input-group-text">First and last name</span>
+            <input disabled type="text" aria-label="First name" placeholder="{{ user['first_name'] }}" class="form-control">
+            <input disabled type="text" aria-label="Last name" placeholder="{{ user['last_name'] }}" class="form-control">
+        </div>
+    </div>
+</div>
+{% endblock %}
